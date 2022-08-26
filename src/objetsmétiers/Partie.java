@@ -4,7 +4,7 @@ import jeuxdedés.*;
 import java.util.ArrayList;
 
 //Cette classe est public car elle represente le lien des ojets metiers avec le reste de l'application
-public class Partie {
+public final class Partie {
 	Goblet goblet;
 	public int nbrLancé;
 	private ArrayList<Joueur> listeJoueur =new ArrayList<Joueur>();
