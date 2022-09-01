@@ -1,4 +1,4 @@
-package objetsmétiers;
+package objetsmetiers;
 
 import java.util.ArrayList;
 
@@ -41,7 +41,7 @@ class Joueur {
 	
 	//trier une liste de joueur pour etablir un classement
 	static ArrayList<Joueur> classement(ArrayList<Joueur> list) {
-		ArrayList<Joueur> listeTriée=new ArrayList<Joueur>();
+		ArrayList<Joueur> listeTriee=new ArrayList<Joueur>();
 		while(list.size()!=0) {
 			Joueur jMax=list.get(0);
 			for(Joueur j : list) {
@@ -49,10 +49,10 @@ class Joueur {
 					jMax=j;
 				}
 			}
-			listeTriée.add(jMax);
+			listeTriee.add(jMax);
 			list.remove(jMax);
 			}
-		return listeTriée;
+		return listeTriee;
 		}
 
 		

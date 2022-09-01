@@ -1,6 +1,6 @@
-package jeuxdedés;
+package jeuxdedes;
 
-import objetsmétiers.*;
+import objetsmetiers.*;
 
 //fait le lien entre l'ihm et la class partie definie dans le package objetsmetiers
 public class Principale{

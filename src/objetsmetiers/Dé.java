@@ -1,13 +1,13 @@
-package objetsmétiers;
+package objetsmetiers;
 import java.util.Random;
 
-//Cette classe represente un dé
-class Dé {
+//Cette classe represente un dï¿½
+class Des{
 	
-	//represente la valeur de la face du dé
+	//represente la valeur de la face du dï¿½
 	private int valeur;
 	private Random random = new Random();
-	Dé() {
+	Des() {
 		valeur=4;
 	}
 	

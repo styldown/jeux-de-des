@@ -1,12 +1,12 @@
-package objetsmétiers;
+package objetsmetiers;
 
-import jeuxdedés.*;
+import jeuxdedes.*;
 import java.util.ArrayList;
 
 //Cette classe est public car elle represente le lien des ojets metiers avec le reste de l'application
 public final class Partie {
 	Goblet goblet;
-	public int nbrLancé;
+	public int nbrTour;
 	private ArrayList<Joueur> listeJoueur =new ArrayList<Joueur>();
 	InterfaceIHM iHM;
 	
@@ -14,29 +14,29 @@ public final class Partie {
 	public Partie(InterfaceIHM iHM) {
 		this.iHM=iHM;
 		goblet=new Goblet();
-		nbrLancé=iHM.getNbrLancé();
+		nbrTour=iHM.getNbrTours();
 		iHM.getListeJoueur().forEach((n) -> listeJoueur.add(new Joueur(n, this)));
 	}
 	
-	//parcour la liste des joueur et leurs donne la main; l'operation se repete selon le nbr de lancés definit 
+	//parcour la liste des joueur et leurs donne la main; l'operation se repete selon le nbr de lancï¿½s definit 
 	public void lancerPartie() {
-		for (int i=1; i<=nbrLancé; i++) {
-			int numeroLancé=i;
-			listeJoueur.forEach((n) -> unLancé(n,numeroLancé ));
+		for (int i=1; i<=nbrTour; i++) {
+			int numeroTour=i;
+			listeJoueur.forEach((n) -> unTour(n,numeroTour));
 		}	
 	}
 	
 	//permets a un joueur de lancer son goblet et affiche les resultat
-	private void unLancé(Joueur j, int numeroLancé) {
-		iHM.afficherPostTour(j.toString(), numeroLancé);
+	private void unTour(Joueur j, int numeroTour) {
+		iHM.afficherPostTour(j.toString(), numeroTour);
 		j.jouer();
 		iHM.afficherPresTour(j.toString(), goblet.gobletToIhm());
 	}
 	
 	// trie la liste des joueur selon leurs score et appel l'ihm pour afficher les resultat
 	public void scoreFinal() {
-		ArrayList<Joueur> listJoueurClassé=Joueur.classement(listeJoueur);
-		listJoueurClassé.forEach((n) ->  iHM.scoreFinal(n.toString(),listJoueurClassé.indexOf(n)+1));
+		ArrayList<Joueur> listJoueurClasser=Joueur.classement(listeJoueur);
+		listJoueurClasser.forEach((n) ->  iHM.scoreFinal(n.toString(),listJoueurClasser.indexOf(n)+1));
 	}
 	
 	public void finPartie() {
